@@ -1,0 +1,318 @@
+#nav_bar_ul_id {
+    list-style-type: none;
+    margin: 0;
+    height: 40px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    overflow: hidden;
+    background-color: #232F3E;
+}
+
+.nav-belt {
+    background-color: #131921;
+    height: 45px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* margin: auto; */
+}
+
+.nav_bar_li {
+    float: left;
+}
+
+.nav_bar_li>a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    /* background-color: #111; */
+    /* border-color: white; */
+    outline: 1px solid white;
+
+}
+
+.nav_bar_li .all {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_bar_li .all img {
+    width: 16px;
+    height: 16px;
+    padding:0  5px;
+}
+
+.nav_bar_li .all .all_p {
+    color: white;
+    font-size: 16;
+    padding: 0 5px;
+}
+
+
+
+header::after {
+    clear: both;
+}
+
+.header {
+    background-color: #131921;
+    height: 45px;
+    padding: 10px;
+
+}
+
+/* Left */
+
+
+.nav-left {
+    width: 25%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    float: left;
+}
+
+.nav-logo img {
+    color: white;
+    width: 100px;
+    height: 35px;
+    align-items: flex-start;
+    /* display: flex;
+    position: static; */
+}
+
+.nav-logo {
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+}
+
+.nav-global-location {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+}
+
+.nav-global-location p {
+    display: inline;
+    color: white;
+}
+
+.nav-global-location img {
+    width: 16px;
+    height: 20px;
+    padding: 0 5px 0 5px;
+}
+
+/* Fill */
+
+
+.nav-fill {
+    width: 40%;
+    height: 40px;
+    float: left;
+    
+}
+
+/* all container */
+
+.nav-fill-left {
+    width: 10%;
+    float: left;
+    height: 100%;
+    position: relative;
+    display: flex;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    background-color: #DADADA;
+}
+
+
+
+
+.nav-search-dropdown-card img {
+    width: 8px;
+    height: 8px;
+    padding: 0px 5px;
+    margin-top: auto;
+    display: inline;
+    align-self: center;
+    margin-bottom: auto;
+}
+
+.nav-search-dropdown-card p {
+    display: inline;
+    padding: 0px 3px;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+/* search field conainer */
+
+.nav-fill-fill {
+    height: 100%;
+    width: 80%;
+    float: left;
+    background-color: #DADADA;
+}
+
+.nav-fill-fill-input {
+    width: 100%;
+    height: 100%;
+    padding: 0% 8px;
+    border: none;
+    
+}
+
+.nav-fill-fill-input:focus {
+   
+    outline: none;
+}
+
+/* search container */
+
+.nav-fill-right {
+    width: 10%;
+    position: relative;
+    height: 100%;
+    float: left;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3A847;
+}
+
+.nav-fill-right img {
+    width: 20px;
+    height: 20px;
+
+
+}
+
+
+/* Right */
+
+.nav-right {
+    height: 40px;
+    width: 35%;
+    /* float: left; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* choose language */
+
+.language {
+    height: 40px;
+
+    padding: 0 10px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.language #flag {
+    padding: 0px 3px;
+    width: 25px;
+    height: 25px;
+}
+
+.language #dropdown {
+    padding: 0px 3px;
+    color: white;
+    width: 10px;
+    height: 10px;
+}
+
+
+/* Hello singin in Account & list */
+
+.hello_sign_in {
+    /* width: 170px; */
+    height: 40px;
+    float: left;
+    padding: 0 10px;
+    display: flex;
+    justify-items: center;
+    align-items: center; 
+   
+}
+
+.hello_sign_in img {
+    width: 10px;
+    height: 10px;
+    padding: 0 5px 0 5px;
+    
+
+}
+
+.hello_sign_in p {
+    color: white;
+    padding: 0;
+    font-size: 14;
+
+    float: left;
+}
+
+/* Return & Orders */
+.orders {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    float: left;
+}
+
+.orders p {
+    color: white;
+    font-size: 14;
+}
+
+/* cart */
+
+.cart {
+    height: 40px;
+    padding: 0 10px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* float: left; */
+}
+
+.cart img {
+    width: 32px;
+    height: 32px;
+    padding: 0 10px 0 5px;
+   
+}
+
+.cart #cart_p {
+    color: white;
+    font-size: 14;
+    padding: 0 5px 0 0;
+}
+
+.clearfix {
+    clear: both;
+}
