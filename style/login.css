@@ -1,0 +1,161 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;    
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+.container {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* background-color: grey; */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* box-sizing: border-box; */
+
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 180px;
+    height: 50px;
+    align-self: center;
+
+}
+
+.card {
+    width: 500;
+    margin-top: 20px;
+    height: 500;
+    border: 1px solid gray;
+    border-radius: 8px;
+    /* background-color: gainsboro; */
+    padding: 20px;
+}
+
+/* #Font size: 28px
+
+Font weight: 400
+
+Line height: 33.6px
+
+Font color: rgb(17, 17, 17) */
+
+#sign_in_label {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 33.6px;
+    color: rgb(17, 17, 17);
+}
+
+#email_label {
+    font-size: 14;
+    font-weight:700;
+    font-size: 13px;
+    line-height: 19px;
+    color: rgb(17, 17, 17);
+}
+
+#email {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* box-sizing: border-box[fix] Input with width: 100% goes outside parent's bound */
+}
+
+form {
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+
+/*
+Font size: 13px
+
+Font weight: 400
+
+Line height: 19px
+
+Font color: rgba(0, 0, 0, 0)
+*/
+
+#continue {
+    background-color: #F2CC6D;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 1);
+    width: 100%;
+    height: 40px;
+    display: block;
+    border: 0.5px solid black;
+}
+
+/*
+Font size: 12px
+
+Font weight: 400
+
+Line height: 18px
+
+Font color: rgb(17, 17, 17)
+*/
+#agreement {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgb(17, 17, 17);
+}
+
+/*
+Font size: 13px
+
+Font weight: 400
+
+Line height: 19px
+
+Font color: rgb(196, 85, 0)
+*/
+
+#help {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    
+}
+
+#help > a:hover {
+    color: rgb(196, 85, 0);
+}
+
+#help > a {
+    text-decoration: none;
+    /* color: rgb(196, 85, 0); */
+}
+
+.divier hr {
+    width: 20%;
+}
+
+.divier  {
+    display: inline;
+}
+
+#create {
+    width: 100%;
+    height: 40px;
+    background-color: gainsboro;
+    border: 1px solid black;
+    border-radius: 4px;
+}
