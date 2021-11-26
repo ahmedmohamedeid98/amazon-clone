@@ -11,9 +11,65 @@ var email_inpt = document.getElementById("email");
 var password_inpt = document.getElementById("password");
 var shown_email_span = document.getElementById("entered_email");
 
+var emailError = document.getElementById("email_error_li_id");
+var passwordError = document.getElementById("password_error_li_id");
+var problemCard = document.getElementById("problem_card");
+var problemBody = document.getElementById("problem_body");
 var entered_email = "";
 var entered_password = "";
 var showPass = true;
+
+
+var emailErrorMessage = "";
+var passwordErrorMessage = "";
+
+var email_list_in_database = [
+    "ahmedmohamedeid98@gmail.com"
+];
+var password_list_in_database = [
+    "12345678"
+];
+
+function emailExistInDatabase() {
+    if(email_list_in_database.includes(email_inpt.value)) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+function passwordMatchWithEnteredEmail() {
+    let entered_email_index = email_list_in_database.indexOf(email_inpt.value);
+    if(password_list_in_database[entered_email_index] == password_inpt.value) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function emailIsValid() {
+    emailErrorMessage = "";
+    if (email_inpt.value == "") {
+        emailErrorMessage = "Enter your email or mobile phone number";
+        return false;
+    } else {
+        entered_email = email_inpt.value;
+        return true;
+    }
+}
+
+function passwordisValid() {
+    passwordErrorMessage = "";
+    if (password_inpt.value == "") {
+        passwordErrorMessage = "Enter your password";
+        return false;
+    } else {
+        entered_password = password_inpt.value;
+        return true;
+    }
+
+}
 
 function viewEmailSection() {
     console.log("show email section....");
@@ -26,7 +82,7 @@ function viewEmailSection() {
     passwordDiv.style.display = "none";
     email_inpt.value = entered_email;
     shownEnteredEmailDiv.style.display = "none";
-    
+
 }
 
 function viewPasswordSection() {
@@ -44,18 +100,77 @@ function viewPasswordSection() {
     shown_email_span.textContent = entered_email;
 }
 
+
+
+function addErrorStyleToEmailInput() {
+    emailError.style.display = "block";
+    emailError.style.margin = "2px 0 10px 0";
+    emailError.innerText = emailErrorMessage;
+    email_inpt.style.border = "1px solid red";
+    email_inpt.style.boxShadow = "0px 1px 2px 3px rgba(192, 0, 0, 0.2)";
+}
+
+function addErrorStyleToPasswordInput() {
+    passwordError.style.display = "block";
+    passwordError.style.margin = "2px 0 10px 0";
+    passwordError.innerText = passwordErrorMessage;
+    password_inpt.style.border = "1px solid red";
+    password_inpt.style.boxShadow = "0px 1px 2px 3px rgba(192, 0, 0, 0.2)";
+}
+
+function removeErrorStyleFromEmailInput() {
+    email_inpt.style.border = null;
+    email_inpt.style.boxShadow = null;
+    emailError.style.display = "none";
+}
+
+function removeErrorStyleFromPasswordInput() {
+    password_inpt.style.border = null;
+    password_inpt.style.boxShadow = null;
+    passwordError.style.display = "none";
+}
+
+var isContinue = true;
 continueBtn.addEventListener("click", () => {
     console.log("continueButton Clikced");
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (email_inpt.value != "" && email_inpt.value.match(re)) {
-        entered_email = email_inpt.value;
-        viewPasswordSection();
+    if (isContinue) {
+        if (emailIsValid()) {
+            if(emailExistInDatabase()) {
+                viewPasswordSection();
+                isContinue = false;
+                problemCard.style.display = "none";
+                removeErrorStyleFromEmailInput();
+            } else {
+                problemBody.innerText = "We cannot find an account with that email address";
+                problemCard.style.display = "inline-flex";
+            }
+        } else {
+            addErrorStyleToEmailInput();
+        }
     } else {
-        
+        if (passwordisValid()) {
+            // check email and password in database
+            removeErrorStyleFromPasswordInput();
+            if(passwordMatchWithEnteredEmail()) {
+                // if email and password matched go to index page
+                problemCard.style.display = "none";
+                console.log("login successfully!!!");
+            } else {
+                // else show problem box with error message
+                problemBody.innerText = "Your password is incorrect";
+                problemCard.style.display = "inline-flex";
+
+            }
+            
+        } else {
+            addErrorStyleToPasswordInput()
+        }
     }
 
 });
 
 changeBtn.addEventListener("click", () => {
     viewEmailSection();
+    isContinue = true;
+    problemCard.style.display = "none";
 });

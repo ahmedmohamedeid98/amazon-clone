@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,68 +8,85 @@
     <title>Login</title>
     <link rel="stylesheet" href="../style/login.css">
 </head>
+
 <body>
-    <div class="page-header" >
-    <div class="container">
-        <div class="logo_container">
-            <img class="logo" src="../resources/amazon-logo-black.png" alt="">
-        </div>
-        <div class="card">
-                <p id="sign_in_label" >Sign In</p>
-                <div id="entered_email_section" >
-                    <span id="entered_email" >ahmed@gmail.com</span>
-                    <span> <button class="int" id="change_btn" >Change</button> </span>
+    <div class="page-header">
+        <div class="container">
+            <div class="logo_container">
+                <img class="logo" src="../resources/amazon-logo-black.png" alt="">
+            </div>
+            <div id="problem_card">
+                <img src="../resources/warning.png" alt="">
+                <div id="text_content_div">    
+                    <p id="problem_title">There was a problem</p>
+                    <p id="problem_body">Your password is incorrect</p>
                 </div>
-                <div class="email_div" >
+            </div>
+            <div class="card">
+                <p id="sign_in_label">Sign In</p>
+                <div id="entered_email_section">
+                    <span id="entered_email">ahmed@gmail.com</span>
+                    <span> <button class="int" id="change_btn">Change</button> </span>
+                </div>
+                <div class="email_div">
                     <label class="input_labels" id="email_label" for="email">Email or mobile phone number</label>
                     <input class="input_field" type="email" id="email" required>
+                    <span class="invalid_input_message">
+                        <li id="email_error_li_id"></li>
+                    </span>
                 </div>
                 <div class="password_div">
                     <span id="password_label_span">
-                        <label class="input_labels"  id="password_label" for="password">Password</label>
+                        <label class="input_labels" id="password_label" for="password">Password</label>
                     </span>
                     <span id="forget_password_span">
                         <a class="int" href="#">Forget Your Password?</a>
                     </span>
 
-                    
+
                     <input class="input_field" type="password" id="password" required>
+                    <span class="invalid_input_message">
+                        <li id="password_error_li_id"></li>
+                    </span>
                 </div>
                 <!-- <input id="continue" type="submit" tabindex="5" value="Continue"> -->
-            <button id="continue_btn" class="buttons">Continue</button>
-            <div id="aggreement_and_help_div">
-                <p id="agreement">By continuing, you agree to Amazon's <a href="#" class="int">Conditions of Use</a> and <a href="#" class="int">Privacy Notice</a></p></p>
-                <p  id="help"> <a href="#" class="int">Need Help?</a></p>
+                <button id="continue_btn" class="buttons">Continue</button>
+                <div id="aggreement_and_help_div">
+                    <p id="agreement">By continuing, you agree to Amazon's <a href="#" class="int">Conditions of Use</a>
+                        and <a href="#" class="int">Privacy Notice</a></p>
+                    </p>
+                    <p id="help"> <a href="#" class="int">Need Help?</a></p>
+                </div>
+                <div id="remember_me_div_id">
+                    <input id="remember_me_id" type="checkbox" value="remember me">
+                    <label for="remember_me_id">Keep me signed in. </label>
+
+                </div>
+
+
+
             </div>
-            <div id="remember_me_div_id" >
-                <input id="remember_me_id" type="checkbox" value="remember me">
-                <label for="remember_me_id">Keep me signed in. </label>
-                
+            <div class="divider">
+
+                <h2><span>New to Amazon?</span></h2>
             </div>
-
-            
-
-        </div>
-        <div class="divider">
-
-            <h2><span>New to Amazon?</span></h2>
-        </div>
-        <div class="create_account">
-            <button id="create_button" class="buttons">Create your Amazon account</button>
-            <!-- <input id="create" type="submit" tabindex="5" value="Create your Amazon account"> -->
+            <div class="create_account">
+                <button id="create_button" class="buttons">Create your Amazon account</button>
+                <!-- <input id="create" type="submit" tabindex="5" value="Create your Amazon account"> -->
+            </div>
         </div>
     </div>
-</div>
-<div class="page-footer" >
-    <div class="footer-links">
-        <a href="#" class="int">Conditions of use</a>
-        <a href="#" class="int">Privacy Notice</a>
-        <a href="#" class="int">Help</a>
+    <div class="page-footer">
+        <div class="footer-links">
+            <a href="#" class="int">Conditions of use</a>
+            <a href="#" class="int">Privacy Notice</a>
+            <a href="#" class="int">Help</a>
+        </div>
+        <div>
+            <p> © 1996-2021, Amazon.com, Inc. or its affiliates </p>
+        </div>
     </div>
-    <div>
-        <p> © 1996-2021, Amazon.com, Inc. or its affiliates </p>
-    </div>
-</div>
-<script src="../js/login.js"></script>
+    <script src="../js/login.js"></script>
 </body>
+
 </html>
