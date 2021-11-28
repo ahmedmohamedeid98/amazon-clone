@@ -11,7 +11,7 @@
 .nav-belt {
     background-color: #131921;
     height: 45px;
-    width: 100%;
+    width: 98.5%;
     padding: 10px;
     display: flex;
     /* justify-content: center; */
@@ -72,7 +72,7 @@ header::after {
 
 
 .nav-left {
-    width: 25%;
+    width: 22%;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -119,7 +119,7 @@ header::after {
 
 
 .nav-fill {
-    width: 40%;
+    width: 38%;
     height: 40px;
     float: left;
     
@@ -211,7 +211,7 @@ header::after {
 
 .nav-right {
     height: 40px;
-    width: 35%;
+    width: 32%;
     /* float: left; */
     display: flex;
     align-items: center;
