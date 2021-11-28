@@ -16,12 +16,10 @@ box-sizing: border-box;
 .nav-belt {
     background-color: #131921;
     height: 45px;
-<<<<<<< HEAD
-    width: 98.5%;
-=======
+
     width: 100%;
     /* position: relative; */
->>>>>>> 221c52979d0999c21868f21e098566fb5c695100
+
     padding: 10px;
     display: flex;
     /* justify-content: center; */
