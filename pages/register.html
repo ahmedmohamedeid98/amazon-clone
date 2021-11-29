@@ -6,45 +6,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylsheet" href="../style/sign up.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
     <style>
+        *{
+            font-weight: 700;
+        }
         #top{
             text-align: center;
         }
         img{
-            height: 40px;
-            width: 90px;
+            height: 30px;
+            width: 100px;
             margin-bottom: 10px;
+            margin-top: 10px;
+
         }
         #sign{
             width: 350px;
-            height: 500px;
+            height: 550px;
             position: relative;
             left: 38%;
-            border-radius: 5px;
-            border: solid 0.5px rgb(143, 141, 141);
+            border-radius: 3px;
+            border: solid 0.5px rgb(211, 194, 194);
+            margin-right: 20px;
         }
         #title{
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-            line-height: 33.6;
+            font-family: 'Tajawal', sans-serif;
             font-weight: 400;
             font-size: 28px;
-            display: block;
-            position:absolute;
-            top:300px ;
+            padding: 3px;
+            margin: 10px 0px 10px 15px;
+
+            
+            }
+        .text{
+            height: 20px;
+            width: 300px;
+            padding: 3px;
+            margin: 3px 20px 20px 20px ;
+            border-radius: 2px;
+            border: 1px solid rgb(170, 162, 162) ;
         }
+
+        .text:focus{
+            border: 5px solid #eec04e;
+            box-shadow: 0px 1px 2px 0px rgba(231, 152, 33, 0.2);
+            
+
+        }
+        .label{
+            margin-left: 20px;
+            font-size: 15px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        #icon{
+            font-size: 10px;
+            font-family: 'Tajawal', sans-serif;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+        #submit{
+            width: 310px;
+            height: 30px;
+            background: linear-gradient(#F7DEA1, #F0C14D);
+            background-color: #EFBD40;
+            border-radius: 3px;
+            margin-left: 20px;
+            border:1px solid rgb(170, 162, 162);
+            font-family: 'Tajawal', sans-serif;
+            box-shadow: 1px rgb(170, 162, 162) ;
+            margin-bottom: 30px;
+            
+        }
+        
+        #submit:hover{
+            background: linear-gradient(#F7DEA1, #cea336);
+            cursor: pointer;
+
+        }
+
+        .links{
+            text-decoration: none;
+            font-size: 12px;
+            font-family: 'Tajawal', sans-serif;
+            color: cornflowerblue;
+            }
+
+        .links:hover{
+            text-decoration: underline;
+            color: #EAB652;
+        }
+        .label2{
+            font-size: 12px;
+            font-family: 'Tajawal', sans-serif;
+            color: rgb(17,17,17);
+
+        }
+        #footer{
+            width: 100%;
+            margin-top: 30px;
+           
+            text-align: center;
+        }
+        
+
         
     </style>
 
 </head>
 <body>
     <div id="top">
-        <img src="../resources/Amazon1.png" alt="Amazon Logo">
+        <img src="../resources/Amazon1.png" alt="Amazon Logo" id="logo">
     </div>
+    <form>
     <div id="sign">
         <div id="title">Create account</div>
-        <label for="name"></label><br>
-        <input type="text" class="text" id="name">
 
+        <label for="name" class="label">Your name</label><br>
+        <input type="text" class="text" id="name">
+        <label class="error"></label>
+
+        <label for="name"class="label">Mobile number or email</label><br>
+        <input type="text" class="text" class="email">
+        <label class="error"></label>
+
+        <label for="name"class="label">Password</label><br>
+        <input type="password" class="text" class="password" min="6" placeholder="At least 6 characters" style="margin-bottom: 2px;">
+        <label id="icon"><i class="fad fa-info" style="margin-bottom: 10px;"></i>  Passwords must be at least 6 characters.</label><br>
+
+        <label for="name"class="label" style="margin: top 10px;">Re-enter password</label><br>
+        <input type="password" class="text" class="password" min="6">
+
+        <input type="submit" id="submit" value="Continue">
+
+        <span style="margin-left: 20px; margin-bottom: 20px;">
+        <label class="label2">By creating an account, you agree to Amazon's</label><br>
+        <a href="#" class="links" style="margin-left: 20px;">Conditions of Use</a><label class="label2"> and </label> <a href="#" class="links"> Privacy Notice.</a>
+        </span>
+
+        <hr style="margin: 20px; margin-bottom: 20px;">
+        <span style="margin-left: 20px; margin-bottom: 20px;">
+        <label class="label2">Already have an account?</label><a href="#" class="links"> Sign-In <i class="fas fa-caret-right"></i></a><br>
+        <label class="label2" style="margin-left: 20px;">Buying for work?</label><a href="#" class="links"> Create a free business account <i class="fas fa-caret-right"></i></a><br>
+        </span>
     </div>
+    </form>
+    <hr style="margin:20px 200px ;color:linear-gradient(#d6d5d8fa, #474646 ,#ebdfdffa);" >
+
+    <footer id="footer">
+        <a href="#" class="links" > Conditions of Use </a>
+        <a href="#" class="links" style="margin-left: 30px; margin-right: 30px;">  Privacy Notice  </a>
+        <a href="#" class="links">  Help  </a><br><br>
+        <label class="label2">&copy; 1996-2021, Amazon.com, Inc. or its affiliates</label>
+
+    </footer>
+    <script src="../js/register.js"></script>
 </body>
 </html>
