@@ -155,6 +155,9 @@ continueBtn.addEventListener("click", () => {
                 // if email and password matched go to index page
                 problemCard.style.display = "none";
                 console.log("login successfully!!!");
+                localStorage.setItem("isLoggedIn", true);
+                localStorage.setItem("currentUser", JSON.stringify({"username": "ahmed"}));
+                location.replace("../index.html");
             } else {
                 // else show problem box with error message
                 problemBody.innerText = "Your password is incorrect";

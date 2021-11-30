@@ -1,0 +1,87 @@
+.container-grid {
+    position: relative;
+  }
+  
+  .grid {
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    z-index: 1000;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "categories subcategories subcategories subcategories";
+  }
+  
+  .grid.active {
+    display: grid;
+  }
+  
+  .grid::before {
+    content: "";
+    display: block;
+    background: transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #FFF;
+    position: absolute;
+    top: -5px;
+    left: 65px;
+  }
+  
+  .grid > div {
+    background: #FFF;
+    box-shadow: 0px 3px 6px rgba(0,0,0, .1);
+  }
+  
+  /** --------------------
+      CATEGORIES
+  -------------------- **/
+  
+  .grid .btn-back {
+    background: #232F3E;
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .grid .btn-back i {
+    margin-right: 10px;
+  }
+  
+  .grid .categories {
+    grid-area: categories;
+    padding-top: 10px;
+    min-height: 300px;
+    overflow: auto;
+  }
+  
+  .grid .categories .subtitle {
+    display: none;
+  }
+  
+  .grid .categories a {
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .grid .categories a i {
+    display: none;
+  }
+  
+  .grid .categories a:hover {
+    color: #E47911;
+    font-weight: bold;
+  }
+  
+  .grid .categories a:hover i {
+    display: inline-block;
+  }
