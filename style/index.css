@@ -1,98 +1,171 @@
-body {
+* {
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
     background-color: #EAEDED;
 }
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
 /* * {box-sizing: border-box} */
-.mySlides {display: none}
-.slideImg {vertical-align: middle;}
+.mySlides {
+    display: none
+}
+
+.slideImg {
+    vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
-  
-   width: 100%;
-   height: 500px;
-  position: relative;
-  margin: auto;
+
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin: auto;
 }
 
 /* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a grey background color */
-.prev:hover, .next:hover {
-  background-color: #f1f1f1;
-  color: black;
+.prev:hover,
+.next:hover {
+    background-color: #f1f1f1;
+    color: black;
 }
 
-.categories-contaienr {
-    padding: 0 1% 0 1%;
+.featured-cards-contaienr {
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     position: absolute;
     margin-top: -200px;
-    display: inline-grid;
-    /* grid-template-columns: auto auto auto auto; */
-    grid-template-columns: 23% 23% 23% 23%;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+    width: 98%;
     height: 840px;
     row-gap: 10px;
-    column-gap: 2%;
-    /* background-color: bisque; */
-
+    column-gap: 1.6%;
 }
 
-.card-container {
-    display: flex;
-    justify-content: stretch;
-    padding: 10px;
+.outer-card-container {
     height: 400px;
-    background-color:aliceblue;
+    background-color: red;
 }
 
-.category-title {
+.normal-card-container {
+    height: 100%;
+    width: 100%;
+    padding: 20px 15px;
+    background-color: white;
+}
+
+.normal-card-body {
+    margin: 10px 0 0 0;
+    width: 100%;
+    height: 310px;
+}
+
+.normal-card-body>img {
+    width: 100%;
+    height: 290px;
+}
+
+.price-card-body {
+    margin: 10px 0 0 0;
+    height: 310px;
+}
+
+.price-card-body>img {
+    width: 100%;
+    height: 230px;
+
+}
+
+.price-footer {
+    height: 60px;
+}
+
+.price-footer .part-one {
+    margin: 2px 0;
+    font-size: 12px;
+    padding: 5px;
+    background-color: #FFC266;
+    width: fit-content;
+}
+
+.price-footer .part-two {
+    margin: 5px 0 0 0;
+}
+
+.price-footer .part-three {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    font-weight: 400;
+    max-lines: 1;
+}
+
+.normal-card-title {
     margin: 0;
     padding: 0;
     font-size: 21px;
     font-weight: 700;
     line-height: 27.3px;
     color: rgb(15, 17, 17);
-    /* background-color: aqua; */
 }
 
-.category-body {
-    height: 85%;
+
+
+.grid-card-body {
+    margin: 10px 0 0 0;
+    display: grid;
     width: 100%;
-    background-color: blue;
+    height: 310px;
+    row-gap: 5px;
+    grid-template-columns: 49% 49%;
+    column-gap: 2%;
 }
 
-.category-footer {
-    margin-top: 10px;
+.grid-card-item {
+    height: 135px;
+}
+
+.grid-card-item>img {
+    width: 100%;
+    height: 80%;
 }
 
 
-.category-footer a {
+.grid-card-item>p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgb(15, 17, 17);
+}
+
+.normal-card-footer a {
     font-size: 13px;
     font-weight: 400px;
     line-height: 19px;
@@ -100,7 +173,120 @@ body {
     color: #1167b1;
 }
 
-.category-footer a:hover {
+.normal-card-footer a:hover {
     text-decoration: underline;
     color: rgb(199, 81, 31);
 }
+
+/* Section Two Perfict Gift */
+#perfict-gift-id {
+    /* position: relative; */
+    margin-top: 645px;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    margin-bottom: 20px;
+    width: 97%;
+    height: 250px;
+    background-color: white;
+    padding: 16px;
+}
+
+
+#top-cyber-deals-id {
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    margin-bottom: 20px;
+    width: 97%;
+    height: 400px;
+    background-color: white;
+    padding: 16px;
+}
+
+.section-title {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 31.5px;
+    color: rgb(17, 17, 17);
+}
+
+.section-link {
+    padding: 0 20px;
+    font-size: 13px;
+    font-weight: 400px;
+    line-height: 19px;
+    text-decoration: none;
+    color: #1167b1;
+}
+
+.section-link:hover {
+    text-decoration: underline;
+    color: rgb(199, 81, 31);
+}
+
+.scroll-menu {
+    overflow: auto;
+    white-space: nowrap;
+    margin-top: 10px;
+    overflow: hidden;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(156, 154, 154);
+    border-radius: 4px;
+}
+
+.scroll-menu:hover {
+    overflow: auto;
+    padding-right: 1px;
+}
+
+.scroll-menu-item {
+    display: inline-block;
+    margin-right: 20px;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+    border-radius: 80px;
+}
+
+.cyber-item {
+    display: inline-block;
+    width: 250px;
+}
+
+.cyber-deals-tag {
+    background-color: #FFC266;
+    margin: 10px 0;
+    width: fit-content;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(17, 17, 17);
+}
+
+.top-cyber-deals-img {
+    height: 250px;
+    width: 100%;
+}
+
+.cyber-item-footer {
+    justify-content: center;
+}
+
+
+
+
+
