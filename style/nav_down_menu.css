@@ -1,25 +1,31 @@
-.container-grid {
-    position: relative;
+.container {
+    width: 100%;
   }
   
-  .grid {
-    width: 100%;
+
+.container-menu {
+    margin-left: 70%;
+    /* margin-top: -40px; */
+    position: relative;
+}
+
+.menu {
+    width: 80%;
     position: absolute;
     top: 5px;
-    z-index: 1000;
+    z-index: 10000;
     display: none;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    grid-template-areas: "categories subcategories subcategories subcategories";
   }
-  
-  .grid.active {
-    display: grid;
-  }
-  
-  .grid::before {
+
+.menu.active {
+    display: block;
+}
+
+.menu::before {
+    background-color: red;
     content: "";
     display: block;
+    
     background: transparent;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -27,61 +33,39 @@
     position: absolute;
     top: -5px;
     left: 65px;
-  }
-  
-  .grid > div {
+}
+
+.menu>div {
     background: #FFF;
-    box-shadow: 0px 3px 6px rgba(0,0,0, .1);
-  }
-  
-  /** --------------------
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .1);
+}
+
+/** --------------------
       CATEGORIES
   -------------------- **/
-  
-  .grid .btn-back {
-    background: #232F3E;
-    color: #FFF;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    margin: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    display: none;
-  }
-  
-  .grid .btn-back i {
-    margin-right: 10px;
-  }
-  
-  .grid .categories {
-    grid-area: categories;
+
+  .menu .categories {
+    width: 350px;
     padding-top: 10px;
-    min-height: 300px;
+    min-height: 50px;
     overflow: auto;
-  }
-  
-  .grid .categories .subtitle {
-    display: none;
-  }
-  
-  .grid .categories a {
-    color: #000;
-    font-size: 14px;
+}
+
+.menu #signin-div-id {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-  
-  .grid .categories a i {
-    display: none;
-  }
-  
-  .grid .categories a:hover {
-    color: #E47911;
-    font-weight: bold;
-  }
-  
-  .grid .categories a:hover i {
-    display: inline-block;
-  }
+    justify-content: center;
+    width: 100%;
+}
+
+.menu #signin-div-id > button {
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(#F7DEA1, #F0C14D);
+    outline: none;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+.menu #signin-div-id > button:hover {
+    background: linear-gradient(#F5D68A, #EEBA36);
+}

@@ -1,5 +1,6 @@
 var continueBtn = document.getElementById("continue_btn");
 var changeBtn = document.getElementById("change_btn");
+var createBtn = document.getElementById("create_button");
 var emailDiv = document.getElementsByClassName("email_div")[0];
 var passwordDiv = document.getElementsByClassName("password_div")[0];
 var dividerDiv = document.getElementsByClassName("divider")[0];
@@ -31,7 +32,7 @@ var password_list_in_database = [
 ];
 
 function emailExistInDatabase() {
-    if(email_list_in_database.includes(email_inpt.value)) {
+    if (email_list_in_database.includes(email_inpt.value)) {
         return true;
     } else {
         return false;
@@ -41,7 +42,7 @@ function emailExistInDatabase() {
 
 function passwordMatchWithEnteredEmail() {
     let entered_email_index = email_list_in_database.indexOf(email_inpt.value);
-    if(password_list_in_database[entered_email_index] == password_inpt.value) {
+    if (password_list_in_database[entered_email_index] == password_inpt.value) {
         return true;
     } else {
         return false;
@@ -135,7 +136,7 @@ continueBtn.addEventListener("click", () => {
     console.log("continueButton Clikced");
     if (isContinue) {
         if (emailIsValid()) {
-            if(emailExistInDatabase()) {
+            if (emailExistInDatabase()) {
                 viewPasswordSection();
                 isContinue = false;
                 problemCard.style.display = "none";
@@ -151,12 +152,14 @@ continueBtn.addEventListener("click", () => {
         if (passwordisValid()) {
             // check email and password in database
             removeErrorStyleFromPasswordInput();
-            if(passwordMatchWithEnteredEmail()) {
+            if (passwordMatchWithEnteredEmail()) {
                 // if email and password matched go to index page
                 problemCard.style.display = "none";
                 console.log("login successfully!!!");
                 localStorage.setItem("isLoggedIn", true);
-                localStorage.setItem("currentUser", JSON.stringify({"username": "ahmed"}));
+                localStorage.setItem("currentUser", JSON.stringify({
+                    "username": "ahmed"
+                }));
                 location.replace("../index.html");
             } else {
                 // else show problem box with error message
@@ -164,7 +167,7 @@ continueBtn.addEventListener("click", () => {
                 problemCard.style.display = "inline-flex";
 
             }
-            
+
         } else {
             addErrorStyleToPasswordInput()
         }
@@ -176,4 +179,9 @@ changeBtn.addEventListener("click", () => {
     viewEmailSection();
     isContinue = true;
     problemCard.style.display = "none";
+});
+
+createBtn.addEventListener('click', () => {
+    var url = location.origin + location.pathname.replace("login.html", "register.html");
+    location.replace(url);
 });
