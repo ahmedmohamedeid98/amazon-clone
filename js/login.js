@@ -32,7 +32,10 @@ function getUser(email) {
     var data = localStorage.users;
     if(data) {
         var usersList = JSON.parse(data);
-        currentUser = usersList.filter(user => user.email === email);
+        console.log(usersList);
+        var result = usersList.filter(user => user.email === email);
+        currentUser = result.length > 0 ? result[0] : null;
+    
     }
 }
 // confirm that entered password match stored password
@@ -127,6 +130,7 @@ continueBtn.addEventListener("click", () => {
     if (isContinue) {
         if (emailIsValid()) {
             getUser(email_inpt.value);
+            console.log("current user" + currentUser);
             if (currentUser) {
                 viewPasswordSection();
                 isContinue = false;
