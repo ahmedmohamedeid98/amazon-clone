@@ -9,6 +9,10 @@
 
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/buy_again.css">
+    <link rel="stylesheet" href="../style/nav_down_menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 
     <nav>
         <div class="nav-belt">
@@ -54,12 +58,11 @@
                         <span><img id="dropdown" src="../resources/drop-down-arrow-white.png" alt=""></span>
                     </div>
                 </a>
-                <a href="#">
+                <a id="sing_in_a_id" href="#">
                     <div class="hello_sign_in">
-                        <p>Hello, sign in<br><b>Account & Lists</b></p>
+                        <p>Hello, <span id="sign_in_or_username">sign in</span><br><b>Account & Lists</b></p>
 
                         <span>
-
                             <img src="../resources/drop-down-arrow-white.png" alt="">
                         </span>
                     </div>
@@ -80,6 +83,8 @@
 
             </div>
         </div>
+
+        <div class="clearfix"></div>
         <ul id="nav_bar_ul_id">
             <li class="nav_bar_li"><a class="active" href="../index.html">
                     <div class="all">
@@ -91,14 +96,30 @@
             <li class="nav_bar_li"><a href="../pages/gift_cards.html">Gift Cards</a></li>
             <li class="nav_bar_li"><a href="../pages/buy_again.html">Buy Again</a></li>
             <li class="nav_bar_li"><a href="../pages/customer_services.html">Customer Service</a></li>
-            <li class="nav_bar_li"><a href="../pages/register.html">Register</a></li>
+            <li class="nav_bar_li" id="register_nav_item"><a href="../pages/register.html">Register</a></li>
             <li class="nav_bar_li"><a href="#">sell</a></li>
         </ul>
+
+        <!-- SingnInDownMenu -->
+        <div class="container container-menu">
+            <div class="menu" id="menu">
+                <div class="categories">
+                    <div id="signin-div-id">
+                        <button id="sign_in_out">Signin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End SignInDownMenu -->
+
     </nav>
+    <div class="clearfix"></div>
 </head>
 
 <body>
     <h1>Sell</h1>
+    <script src="../js/nav_down_menu.js"></script>
+
 </body>
 
 </html>
