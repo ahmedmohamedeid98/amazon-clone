@@ -23,31 +23,23 @@ var showPass = true;
 
 var emailErrorMessage = "";
 var passwordErrorMessage = "";
+// init user list variable
+var currentUser;
 
-var email_list_in_database = [
-    "ahmedmohamedeid98@gmail.com"
-];
-var password_list_in_database = [
-    "12345678"
-];
 
-function emailExistInDatabase() {
-    if (email_list_in_database.includes(email_inpt.value)) {
-        return true;
-    } else {
-        return false;
+// get stored user object based email address
+function getUser(email) {
+    var data = localStorage.users;
+    if(data) {
+        var usersList = JSON.parse(data);
+        currentUser = usersList.filter(user => user.email === email);
     }
-
 }
-
+// confirm that entered password match stored password
 function passwordMatchWithEnteredEmail() {
-    let entered_email_index = email_list_in_database.indexOf(email_inpt.value);
-    if (password_list_in_database[entered_email_index] == password_inpt.value) {
-        return true;
-    } else {
-        return false;
-    }
+    return currentUser.password === password_inpt.value;
 }
+
 
 function emailIsValid() {
     emailErrorMessage = "";
@@ -73,7 +65,6 @@ function passwordisValid() {
 }
 
 function viewEmailSection() {
-    console.log("show email section....");
     continueBtn.textContent = "Continue";
     emailDiv.style.display = "block";
     dividerDiv.style.display = "flex";
@@ -87,7 +78,6 @@ function viewEmailSection() {
 }
 
 function viewPasswordSection() {
-    console.log("show pass section...");
     continueBtn.textContent = "Sign In";
     emailDiv.style.display = "none";
     dividerDiv.style.display = "none";
@@ -136,7 +126,8 @@ continueBtn.addEventListener("click", () => {
     console.log("continueButton Clikced");
     if (isContinue) {
         if (emailIsValid()) {
-            if (emailExistInDatabase()) {
+            getUser(email_inpt.value);
+            if (currentUser) {
                 viewPasswordSection();
                 isContinue = false;
                 problemCard.style.display = "none";
@@ -155,11 +146,8 @@ continueBtn.addEventListener("click", () => {
             if (passwordMatchWithEnteredEmail()) {
                 // if email and password matched go to index page
                 problemCard.style.display = "none";
-                console.log("login successfully!!!");
                 localStorage.setItem("isLoggedIn", true);
-                localStorage.setItem("currentUser", JSON.stringify({
-                    "username": "ahmed"
-                }));
+                localStorage.setItem("currentUser", JSON.stringify(currentUser));
                 location.replace("../index.html");
             } else {
                 // else show problem box with error message
