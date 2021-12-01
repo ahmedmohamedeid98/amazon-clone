@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylsheet" href="../style/sign up.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,6 +112,13 @@
            
             text-align: center;
         }
+        .errors{
+            font-size: 10px;
+            margin: 0;
+            color: red;
+            position: absolute;
+            right:30px;
+        }
         
 
         
@@ -121,26 +129,27 @@
     <div id="top">
         <img src="../resources/Amazon1.png" alt="Amazon Logo" id="logo">
     </div>
-    <form>
+    <form action="#"  method="post">
     <div id="sign">
         <div id="title">Create account</div>
 
-        <label for="name" class="label">Your name</label><br>
+        <label for="name" class="label">Your name</label><label id="error1" class="errors"></label><br>
         <input type="text" class="text" id="name">
-        <label class="error"></label>
+        
 
-        <label for="name"class="label">Mobile number or email</label><br>
+        <label for="name"class="label">Mobile number or email</label><label id="error2" class="errors"></label><br>
         <input type="text" class="text" id="email">
-        <label class="error"></label>
+        
 
-        <label for="name"class="label">Password</label><br>
-        <input type="password" class="text" class="password" min="6" placeholder="At least 6 characters" style="margin-bottom: 2px;">
+        <label for="name"class="label">Password</label><label id="error3" class="errors"></label><br>
+        <input type="password" class="text" id="pass" min="6" placeholder="At least 6 characters" style="margin-bottom: 2px;">
         <label id="icon"><i class="fad fa-info" style="margin-bottom: 10px;"></i>  Passwords must be at least 6 characters.</label><br>
 
         <label for="name"class="label" style="margin: top 10px;">Re-enter password</label><br>
-        <input type="password" class="text" id="password" min="6">
+        <input type="password" class="text" id="pass2" min="6">
+        
 
-        <input type="submit" id="submit" value="Continue">
+        <input type="submit" id="submit" value="Continue" onclick="">
 
         <span style="margin-left: 20px; margin-bottom: 20px;">
         <label class="label2">By creating an account, you agree to Amazon's</label><br>
@@ -149,7 +158,7 @@
 
         <hr style="margin: 20px; margin-bottom: 20px;">
         <span style="margin-left: 20px; margin-bottom: 20px;">
-        <label class="label2">Already have an account?</label><a href="#" class="links"> Sign-In <i class="fas fa-caret-right"></i></a><br>
+        <label class="label2">Already have an account?</label><a href="../pages/login.html" class="links"> Sign-In <i class="fas fa-caret-right"></i></a><br>
         <label class="label2" style="margin-left: 20px;">Buying for work?</label><a href="#" class="links"> Create a free business account <i class="fas fa-caret-right"></i></a><br>
         </span>
     </div>

@@ -6,9 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/gift_cards.css">
+    <SCript>
+        $(document).ready(function(){
+        $("#slide1").slideUp();
+        $("#slide2").slideUp();
+        $("#slide3").slideUp();
+
+        $("#fixed1").click(function(){
+        $("#slide1").slideToggle("slow");
+    });
+        $("#fixed2").click(function(){
+        $("#slide2").slideToggle("slow");
+    });
+        $("#fixed3").click(function(){
+        $("#slide3").slideToggle("slow");
+    
+      
+     });
+    });
+    </SCript>
 
     <nav>
 
@@ -269,9 +288,15 @@
             <div id="top_div2_image"><a href="#"><img src="../resources/2021_BFCM_BGCLP_1024x90_US_EN_v2.jpg"></a></div>
             <span id="Freq">Frequently asked questions about Amazon.com gift cards</span>
             <div id="div_boxs">
-                <span class="boxs">What can Amazon Gift Cards be redeemed towards?</span>
-                <span class="boxs">Are there any fees or expiration date to use Amazon Gift Cards?</span>
-                <span class="boxs">Are there any shipping costs on Amazon Gift Cards?</span>
+                <span class="boxs" id="fixed1" style="cursor: pointer;">What can Amazon Gift Cards be redeemed towards?</span>
+                <div id="slide1" class="boxs" style="height: auto; box-shadow: 5px 5px grey; ">Gift Card is redeemable towards purchase of millions of eligible goods and services provided by Amazon.com Services LLC and its affiliates on www.amazon.com, or certain of its affiliated properties, such as smile.amazon.com. Eligible goods and services are subject to change in our sole discretion.</div>
+
+                <span class="boxs" id="fixed2" style="cursor: pointer;">Are there any fees or expiration date to use Amazon Gift Cards?</span>
+                <div id="slide2" class="boxs" style="height: auto;box-shadow: 5px 5px grey;">Gift Card is redeemable towards purchase of millions of eligible goods and services provided by Amazon.com Services LLC and its affiliates on www.amazon.com, or certain of its affiliated properties, such as smile.amazon.com. Eligible goods and services are subject to change in our sole discretion.</div>
+
+                <span class="boxs" id="fixed3" style="cursor: pointer;">Are there any shipping costs on Amazon Gift Cards?</span>
+                <div id="slide3" class="boxs" style="height: auto;box-shadow: 5px 5px grey;">Gift Card is redeemable towards purchase of millions of eligible goods and services provided by Amazon.com Services LLC and its affiliates on www.amazon.com, or certain of its affiliated properties, such as smile.amazon.com. Eligible goods and services are subject to change in our sole discretion.</div>
+
             </div>
             <span style="font-size: 30px;font-weight: bolder; margin: 20px;">New and noteworthy in Gift Cards</span>
             <hr id="hr_boxs">
