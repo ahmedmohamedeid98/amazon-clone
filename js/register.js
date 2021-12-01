@@ -30,7 +30,7 @@ function mailTest() {
         errorMail.textContent = "*Invalid";
         return false;
     }
-    // check if the email exist in the current user list of not 
+    // check if the email exist in the current user list or not 
     // if exist return false;
     var users = [];
     var usersData = localStorage.getItem("users");
